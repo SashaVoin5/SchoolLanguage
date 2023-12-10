@@ -244,9 +244,191 @@ namespace Language.Pages
                     LoadAll();
                 }
             }
-
-            if (SearchText != "")
+            if (ComboBoxSorting.SelectedIndex != 0 && IndexFilter != 0)
             {
+                if (ComboBoxSorting.SelectedIndex == 0)
+                {
+                    string filter = IndexFilter.ToString();
+                    var Data = schoollanguageEntities.GetContext().Client.OrderBy(Client => Client.ID).Where(Client => Client.GenderCode == filter).ToList();
+                    if (ViewPages == 10)
+                    {
+                        DataView.ItemsSource = Data.Skip(start * 10).Take(10);
+                        fullcount = Data.Count();
+
+                        Load10();
+                    }
+                    if (ViewPages == 50)
+                    {
+                        DataView.ItemsSource = Data.Skip(start * 50).Take(50);
+                        fullcount = Data.Count();
+
+                        Load50();
+                    }
+                    if (ViewPages == 200)
+                    {
+                        DataView.ItemsSource = Data.Skip(start * 200).Take(200);
+                        fullcount = Data.Count();
+
+                        Load200();
+                    }
+                    if (ViewPages == 555)
+                    {
+                        DataView.ItemsSource = Data;
+                        fullcount = Data.Count();
+
+                        LoadAll();
+                    }
+
+                }
+                if (ComboBoxSorting.SelectedIndex == 1)
+                {
+                    string filter = IndexFilter.ToString();
+                    var Data = schoollanguageEntities.GetContext().Client.OrderBy(p => p.LastName).Where(Client => Client.GenderCode == filter).ToList();
+                    if (ViewPages == 10)
+                    {
+                        DataView.ItemsSource = Data.Skip(start * 10).Take(10);
+                        fullcount = Data.Count();
+                        Load10();
+                    }
+                    if (ViewPages == 50)
+                    {
+                        DataView.ItemsSource = Data.Skip(start * 50).Take(50);
+                        fullcount = Data.Count();
+                        Load50();
+                    }
+                    if (ViewPages == 200)
+                    {
+                        DataView.ItemsSource = Data.Skip(start * 200).Take(200);
+                        fullcount = Data.Count();
+                        Load200();
+                    }
+                    if (ViewPages == 555)
+                    {
+                        DataView.ItemsSource = Data;
+                        fullcount = Data.Count();
+                        LoadAll();
+                    }
+                }
+                if (ComboBoxSorting.SelectedIndex == 2)
+                {
+                    string filter = IndexFilter.ToString();
+                    var Data = schoollanguageEntities.GetContext().Client.ToList().OrderByDescending(c => c.DataVisitint).Where(Client => Client.GenderCode == filter).ToList();
+                    if (ViewPages == 10)
+                    {
+                        DataView.ItemsSource = Data.Skip(start * 10).Take(10);
+                        fullcount = Data.Count();
+                        Load10();
+                    }
+                    if (ViewPages == 50)
+                    {
+                        DataView.ItemsSource = Data.Skip(start * 50).Take(50);
+                        fullcount = Data.Count();
+                        Load50();
+                    }
+                    if (ViewPages == 200)
+                    {
+                        DataView.ItemsSource = Data.Skip(start * 200).Take(200);
+                        fullcount = Data.Count();
+                        Load200();
+                    }
+                    if (ViewPages == 555)
+                    {
+                        DataView.ItemsSource = Data;
+                        fullcount = Data.Count();
+                        LoadAll();
+                    }
+                }
+                if (ComboBoxSorting.SelectedIndex == 3)
+                {
+                    string filter = IndexFilter.ToString();
+                    var Data = schoollanguageEntities.GetContext().Client.ToList().OrderBy(c => c.DataVisitint).Where(Client => Client.GenderCode == filter).ToList();
+                    if (ViewPages == 10)
+                    {
+                        DataView.ItemsSource = Data.Skip(start * 10).Take(10);
+                        fullcount = Data.Count();
+                        Load10();
+                    }
+                    if (ViewPages == 50)
+                    {
+                        DataView.ItemsSource = Data.Skip(start * 50).Take(50);
+                        fullcount = Data.Count();
+                        Load50();
+                    }
+                    if (ViewPages == 200)
+                    {
+                        DataView.ItemsSource = Data.Skip(start * 200).Take(200);
+                        fullcount = Data.Count();
+                        Load200();
+                    }
+                    if (ViewPages == 555)
+                    {
+                        DataView.ItemsSource = Data;
+                        fullcount = Data.Count();
+                        LoadAll();
+                    }
+                }
+                if (ComboBoxSorting.SelectedIndex == 4)
+                {
+                    string filter = IndexFilter.ToString();
+                    var Data = schoollanguageEntities.GetContext().Client.ToList().OrderByDescending(c => c.CountVisitint).Where(Client => Client.GenderCode == filter).ToList();
+                    if (ViewPages == 10)
+                    {
+                        DataView.ItemsSource = Data.Skip(start * 10).Take(10);
+                        fullcount = Data.Count();
+                        Load10();
+                    }
+                    if (ViewPages == 50)
+                    {
+                        DataView.ItemsSource = Data.Skip(start * 50).Take(50);
+                        fullcount = Data.Count();
+                        Load50();
+                    }
+                    if (ViewPages == 200)
+                    {
+                        DataView.ItemsSource = Data.Skip(start * 200).Take(200);
+                        fullcount = Data.Count();
+                        Load200();
+                    }
+                    if (ViewPages == 555)
+                    {
+                        DataView.ItemsSource = Data;
+                        fullcount = Data.Count();
+                        LoadAll();
+                    }
+                }
+                if (ComboBoxSorting.SelectedIndex == 5)
+                {
+                    string filter = IndexFilter.ToString();
+                    var Data = schoollanguageEntities.GetContext().Client.ToList().OrderBy(c => c.CountVisitint).Where(Client => Client.GenderCode == filter).ToList();
+                    if (ViewPages == 10)
+                    {
+                        DataView.ItemsSource = Data.Skip(start * 10).Take(10);
+                        fullcount = Data.Count();
+                        Load10();
+                    }
+                    if (ViewPages == 50)
+                    {
+                        DataView.ItemsSource = Data.Skip(start * 50).Take(50);
+                        fullcount = Data.Count();
+                        Load50();
+                    }
+                    if (ViewPages == 200)
+                    {
+                        DataView.ItemsSource = Data.Skip(start * 200).Take(200);
+                        fullcount = Data.Count();
+                        Load200();
+                    }
+                    if (ViewPages == 555)
+                    {
+                        DataView.ItemsSource = Data;
+                        fullcount = Data.Count();
+                        LoadAll();
+                    }
+                }
+            }
+
+                if (SearchText != "")
+                {
                 if (IndexFilter != 0)
                 {
                     string filter = IndexFilter.ToString();
@@ -305,12 +487,370 @@ namespace Language.Pages
                         LoadAll();
                     }
                 }
+                if (ComboBoxSorting.SelectedIndex != 0 && IndexFilter == 0)
+                {
+                    if (ComboBoxSorting.SelectedIndex == 0)
+                    {
+                        var Data = schoollanguageEntities.GetContext().Client.OrderBy(p => p.ID).Where(Client => Client.LastName.Contains(SearchText) || Client.Phone.Contains(SearchText) || Client.FirstName.Contains(SearchText) || Client.Patronymic.Contains(SearchText) || Client.Email.Contains(SearchText)).ToList();
+                        if (ViewPages == 10)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 10).Take(10);
+                            fullcount = Data.Count();
+
+                            Load10();
+                        }
+                        if (ViewPages == 50)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 50).Take(50);
+                            fullcount = Data.Count();
+
+                            Load50();
+                        }
+                        if (ViewPages == 200)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 200).Take(200);
+                            fullcount = Data.Count();
+
+                            Load200();
+                        }
+                        if (ViewPages == 555)
+                        {
+                            DataView.ItemsSource = Data;
+                            fullcount = Data.Count();
+
+                            LoadAll();
+                        }
+
+                    }
+                    if (ComboBoxSorting.SelectedIndex == 1)
+                    {
+                        var Data = schoollanguageEntities.GetContext().Client.OrderBy(p => p.LastName).Where(Client => Client.LastName.Contains(SearchText) || Client.Phone.Contains(SearchText) || Client.FirstName.Contains(SearchText) || Client.Patronymic.Contains(SearchText) || Client.Email.Contains(SearchText)).ToList();
+                        if (ViewPages == 10)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 10).Take(10);
+                            fullcount = Data.Count();
+                            Load10();
+                        }
+                        if (ViewPages == 50)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 50).Take(50);
+                            fullcount = Data.Count();
+                            Load50();
+                        }
+                        if (ViewPages == 200)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 200).Take(200);
+                            fullcount = Data.Count();
+                            Load200();
+                        }
+                        if (ViewPages == 555)
+                        {
+                            DataView.ItemsSource = Data;
+                            fullcount = Data.Count();
+                            LoadAll();
+                        }
+                    }
+                    if (ComboBoxSorting.SelectedIndex == 2)
+                    {
+                        var Data = schoollanguageEntities.GetContext().Client.ToList().OrderByDescending(c => c.DataVisitint).Where(Client => Client.LastName.Contains(SearchText) || Client.Phone.Contains(SearchText) || Client.FirstName.Contains(SearchText) || Client.Patronymic.Contains(SearchText) || Client.Email.Contains(SearchText)).ToList();
+                        if (ViewPages == 10)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 10).Take(10);
+                            fullcount = Data.Count();
+                            Load10();
+                        }
+                        if (ViewPages == 50)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 50).Take(50);
+                            fullcount = Data.Count();
+                            Load50();
+                        }
+                        if (ViewPages == 200)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 200).Take(200);
+                            fullcount = Data.Count();
+                            Load200();
+                        }
+                        if (ViewPages == 555)
+                        {
+                            DataView.ItemsSource = Data;
+                            fullcount = Data.Count();
+                            LoadAll();
+                        }
+                    }
+                    if (ComboBoxSorting.SelectedIndex == 3)
+                    {
+                        var Data = schoollanguageEntities.GetContext().Client.ToList().OrderBy(c => c.DataVisitint).Where(Client => Client.LastName.Contains(SearchText) || Client.Phone.Contains(SearchText) || Client.FirstName.Contains(SearchText) || Client.Patronymic.Contains(SearchText) || Client.Email.Contains(SearchText)).ToList();
+                        if (ViewPages == 10)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 10).Take(10);
+                            fullcount = Data.Count();
+                            Load10();
+                        }
+                        if (ViewPages == 50)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 50).Take(50);
+                            fullcount = Data.Count();
+                            Load50();
+                        }
+                        if (ViewPages == 200)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 200).Take(200);
+                            fullcount = Data.Count();
+                            Load200();
+                        }
+                        if (ViewPages == 555)
+                        {
+                            DataView.ItemsSource = Data;
+                            fullcount = Data.Count();
+                            LoadAll();
+                        }
+                    }
+                    if (ComboBoxSorting.SelectedIndex == 4)
+                    {
+                        var Data = schoollanguageEntities.GetContext().Client.ToList().OrderByDescending(c => c.CountVisitint).Where(Client => Client.LastName.Contains(SearchText) || Client.Phone.Contains(SearchText) || Client.FirstName.Contains(SearchText) || Client.Patronymic.Contains(SearchText) || Client.Email.Contains(SearchText)).ToList();
+                        if (ViewPages == 10)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 10).Take(10);
+                            fullcount = Data.Count();
+                            Load10();
+                        }
+                        if (ViewPages == 50)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 50).Take(50);
+                            fullcount = Data.Count();
+                            Load50();
+                        }
+                        if (ViewPages == 200)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 200).Take(200);
+                            fullcount = Data.Count();
+                            Load200();
+                        }
+                        if (ViewPages == 555)
+                        {
+                            DataView.ItemsSource = Data;
+                            fullcount = Data.Count();
+                            LoadAll();
+                        }
+                    }
+                    if (ComboBoxSorting.SelectedIndex == 5)
+                    {
+                        var Data = schoollanguageEntities.GetContext().Client.ToList().OrderBy(c => c.CountVisitint).Where(Client => Client.LastName.Contains(SearchText) || Client.Phone.Contains(SearchText) || Client.FirstName.Contains(SearchText) || Client.Patronymic.Contains(SearchText) || Client.Email.Contains(SearchText)).ToList();
+                        if (ViewPages == 10)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 10).Take(10);
+                            fullcount = Data.Count();
+                            Load10();
+                        }
+                        if (ViewPages == 50)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 50).Take(50);
+                            fullcount = Data.Count();
+                            Load50();
+                        }
+                        if (ViewPages == 200)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 200).Take(200);
+                            fullcount = Data.Count();
+                            Load200();
+                        }
+                        if (ViewPages == 555)
+                        {
+                            DataView.ItemsSource = Data;
+                            fullcount = Data.Count();
+                            LoadAll();
+                        }
+                    }
+                }
+                if (ComboBoxSorting.SelectedIndex != 0 && IndexFilter != 0)
+                {
+                    if (ComboBoxSorting.SelectedIndex == 0)
+                    {
+                        string filter = IndexFilter.ToString();
+                        var Data = schoollanguageEntities.GetContext().Client.OrderBy(Client => Client.ID).Where(Client => Client.LastName.Contains(SearchText) && Client.GenderCode == filter || Client.Phone.Contains(SearchText) && Client.GenderCode == filter || Client.FirstName.Contains(SearchText) && Client.GenderCode == filter || Client.Patronymic.Contains(SearchText) && Client.GenderCode == filter || Client.Email.Contains(SearchText) && Client.GenderCode == filter).ToList();
+                        if (ViewPages == 10)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 10).Take(10);
+                            fullcount = Data.Count();
+
+                            Load10();
+                        }
+                        if (ViewPages == 50)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 50).Take(50);
+                            fullcount = Data.Count();
+
+                            Load50();
+                        }
+                        if (ViewPages == 200)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 200).Take(200);
+                            fullcount = Data.Count();
+
+                            Load200();
+                        }
+                        if (ViewPages == 555)
+                        {
+                            DataView.ItemsSource = Data;
+                            fullcount = Data.Count();
+
+                            LoadAll();
+                        }
+
+                    }
+                    if (ComboBoxSorting.SelectedIndex == 1)
+                    {
+                        string filter = IndexFilter.ToString();
+                        var Data = schoollanguageEntities.GetContext().Client.OrderBy(p => p.LastName).Where(Client => Client.LastName.Contains(SearchText) && Client.GenderCode == filter || Client.Phone.Contains(SearchText) && Client.GenderCode == filter  || Client.FirstName.Contains(SearchText) && Client.GenderCode == filter || Client.Patronymic.Contains(SearchText) && Client.GenderCode == filter || Client.Email.Contains(SearchText)).ToList();
+                        if (ViewPages == 10)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 10).Take(10);
+                            fullcount = Data.Count();
+                            Load10();
+                        }
+                        if (ViewPages == 50)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 50).Take(50);
+                            fullcount = Data.Count();
+                            Load50();
+                        }
+                        if (ViewPages == 200)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 200).Take(200);
+                            fullcount = Data.Count();
+                            Load200();
+                        }
+                        if (ViewPages == 555)
+                        {
+                            DataView.ItemsSource = Data;
+                            fullcount = Data.Count();
+                            LoadAll();
+                        }
+                    }
+                    if (ComboBoxSorting.SelectedIndex == 2)
+                    {
+                        string filter = IndexFilter.ToString();
+                        var Data = schoollanguageEntities.GetContext().Client.ToList().OrderByDescending(c => c.DataVisitint).Where(Client => Client.LastName.Contains(SearchText) && Client.GenderCode == filter  || Client.Phone.Contains(SearchText) || Client.FirstName.Contains(SearchText) && Client.GenderCode == filter  || Client.Patronymic.Contains(SearchText) && Client.GenderCode == filter || Client.Email.Contains(SearchText)).ToList();
+                        if (ViewPages == 10)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 10).Take(10);
+                            fullcount = Data.Count();
+                            Load10();
+                        }
+                        if (ViewPages == 50)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 50).Take(50);
+                            fullcount = Data.Count();
+                            Load50();
+                        }
+                        if (ViewPages == 200)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 200).Take(200);
+                            fullcount = Data.Count();
+                            Load200();
+                        }
+                        if (ViewPages == 555)
+                        {
+                            DataView.ItemsSource = Data;
+                            fullcount = Data.Count();
+                            LoadAll();
+                        }
+                    }
+                    if (ComboBoxSorting.SelectedIndex == 3)
+                    {
+                        string filter = IndexFilter.ToString();
+                        var Data = schoollanguageEntities.GetContext().Client.ToList().OrderBy(c => c.DataVisitint).Where(Client => Client.LastName.Contains(SearchText) && Client.GenderCode == filter  || Client.Phone.Contains(SearchText) && Client.GenderCode == filter  || Client.FirstName.Contains(SearchText) && Client.GenderCode == filter || Client.Patronymic.Contains(SearchText) && Client.GenderCode == filter  || Client.Email.Contains(SearchText)).ToList();
+                        if (ViewPages == 10)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 10).Take(10);
+                            fullcount = Data.Count();
+                            Load10();
+                        }
+                        if (ViewPages == 50)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 50).Take(50);
+                            fullcount = Data.Count();
+                            Load50();
+                        }
+                        if (ViewPages == 200)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 200).Take(200);
+                            fullcount = Data.Count();
+                            Load200();
+                        }
+                        if (ViewPages == 555)
+                        {
+                            DataView.ItemsSource = Data;
+                            fullcount = Data.Count();
+                            LoadAll();
+                        }
+                    }
+                    if (ComboBoxSorting.SelectedIndex == 4)
+                    {
+                        string filter = IndexFilter.ToString();
+                        var Data = schoollanguageEntities.GetContext().Client.ToList().OrderByDescending(c => c.CountVisitint).Where(Client => Client.LastName.Contains(SearchText) && Client.GenderCode == filter || Client.Phone.Contains(SearchText) && Client.GenderCode == filter || Client.FirstName.Contains(SearchText) && Client.GenderCode == filter || Client.Patronymic.Contains(SearchText) && Client.GenderCode == filter  || Client.Email.Contains(SearchText)).ToList();
+                        if (ViewPages == 10)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 10).Take(10);
+                            fullcount = Data.Count();
+                            Load10();
+                        }
+                        if (ViewPages == 50)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 50).Take(50);
+                            fullcount = Data.Count();
+                            Load50();
+                        }
+                        if (ViewPages == 200)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 200).Take(200);
+                            fullcount = Data.Count();
+                            Load200();
+                        }
+                        if (ViewPages == 555)
+                        {
+                            DataView.ItemsSource = Data;
+                            fullcount = Data.Count();
+                            LoadAll();
+                        }
+                    }
+                    if (ComboBoxSorting.SelectedIndex == 5)
+                    {
+                        string filter = IndexFilter.ToString();
+                        var Data = schoollanguageEntities.GetContext().Client.ToList().OrderBy(c => c.CountVisitint).Where(Client => Client.LastName.Contains(SearchText) && Client.GenderCode == filter || Client.Phone.Contains(SearchText) || Client.FirstName.Contains(SearchText) && Client.GenderCode == filter  || Client.Patronymic.Contains(SearchText) && Client.GenderCode == filter || Client.Email.Contains(SearchText)).ToList();
+                        if (ViewPages == 10)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 10).Take(10);
+                            fullcount = Data.Count();
+                            Load10();
+                        }
+                        if (ViewPages == 50)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 50).Take(50);
+                            fullcount = Data.Count();
+                            Load50();
+                        }
+                        if (ViewPages == 200)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 200).Take(200);
+                            fullcount = Data.Count();
+                            Load200();
+                        }
+                        if (ViewPages == 555)
+                        {
+                            DataView.ItemsSource = Data;
+                            fullcount = Data.Count();
+                            LoadAll();
+                        }
+                    }
+                }
             }
 
             if (Birthday.IsChecked == true)
             {
                 int seeCount = 0;
-                var serach = schoollanguageEntities.GetContext().Client.Where(c => c.Birthday.HasValue && c.Birthday.Value.Month == DateTime.Now.Month).ToList();
+                var serach = schoollanguageEntities.GetContext().Client.Where(Client => Client.Birthday.HasValue && Client.Birthday.Value.Month == DateTime.Now.Month).ToList();
                 DataView.ItemsSource = serach;
                 var countData = serach.Count();
                 fullcount = countData;
@@ -334,8 +874,427 @@ namespace Language.Pages
 
 
                 CountItem.Text = "Показано " + fullcount.ToString() + " записей  ";
+                if (SearchText != "")
+                {
+                    if (IndexFilter != 0)
+                    {
+                        string filter = IndexFilter.ToString();
+                        var Data = schoollanguageEntities.GetContext().Client.OrderBy(Client => Client.ID).Where(Client => Client.LastName.Contains(SearchText) && Client.GenderCode == filter && Client.Birthday.HasValue && Client.Birthday.Value.Month == DateTime.Now.Month || Client.Phone.Contains(SearchText) && Client.GenderCode == filter && Client.Birthday.HasValue && Client.Birthday.Value.Month == DateTime.Now.Month || Client.FirstName.Contains(SearchText) && Client.GenderCode == filter || Client.Patronymic.Contains(SearchText) && Client.GenderCode == filter && Client.Birthday.HasValue && Client.Birthday.Value.Month == DateTime.Now.Month || Client.Email.Contains(SearchText) && Client.GenderCode == filter).ToList();
+                        if (ViewPages == 10)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 10).Take(10);
+                            fullcount = Data.Count();
+                            Load10();
+                        }
+                        if (ViewPages == 50)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 50).Take(50);
+                            fullcount = Data.Count();
+                            Load50();
+                        }
+                        if (ViewPages == 200)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 200).Take(200);
+                            fullcount = Data.Count();
+                            Load200();
+                        }
+                        if (ViewPages == 555)
+                        {
+                            DataView.ItemsSource = Data;
+                            fullcount = Data.Count();
+                            LoadAll();
+                        }
+
+                    }
+                    else
+                    {
+                        var Data = schoollanguageEntities.GetContext().Client.OrderBy(Client => Client.ID).Where(Client => Client.LastName.Contains(SearchText) || Client.Phone.Contains(SearchText) || Client.FirstName.Contains(SearchText) || Client.Patronymic.Contains(SearchText) || Client.Email.Contains(SearchText)).ToList();
+                        if (ViewPages == 10)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 10).Take(10);
+                            fullcount = Data.Count();
+                            Load10();
+                        }
+                        if (ViewPages == 50)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 50).Take(50);
+                            fullcount = Data.Count();
+                            Load50();
+                        }
+                        if (ViewPages == 200)
+                        {
+                            DataView.ItemsSource = Data.Skip(start * 200).Take(200);
+                            fullcount = Data.Count();
+                            Load200();
+                        }
+                        if (ViewPages == 555)
+                        {
+                            DataView.ItemsSource = Data;
+                            fullcount = Data.Count();
+                            LoadAll();
+                        }
+                    }
+                    if (ComboBoxSorting.SelectedIndex != 0 && IndexFilter == 0)
+                    {
+                        if (ComboBoxSorting.SelectedIndex == 0)
+                        {
+                            var Data = schoollanguageEntities.GetContext().Client.OrderBy(p => p.ID).Where(Client => Client.LastName.Contains(SearchText) && Client.Birthday.HasValue && Client.Birthday.Value.Month == DateTime.Now.Month || Client.Phone.Contains(SearchText) && Client.Birthday.HasValue && Client.Birthday.Value.Month == DateTime.Now.Month || Client.FirstName.Contains(SearchText) && Client.Birthday.HasValue && Client.Birthday.Value.Month == DateTime.Now.Month || Client.Patronymic.Contains(SearchText) && Client.Birthday.HasValue && Client.Birthday.Value.Month == DateTime.Now.Month || Client.Email.Contains(SearchText)).ToList();
+                            if (ViewPages == 10)
+                            {
+                                DataView.ItemsSource = Data.Skip(start * 10).Take(10);
+                                fullcount = Data.Count();
+
+                                Load10();
+                            }
+                            if (ViewPages == 50)
+                            {
+                                DataView.ItemsSource = Data.Skip(start * 50).Take(50);
+                                fullcount = Data.Count();
+
+                                Load50();
+                            }
+                            if (ViewPages == 200)
+                            {
+                                DataView.ItemsSource = Data.Skip(start * 200).Take(200);
+                                fullcount = Data.Count();
+
+                                Load200();
+                            }
+                            if (ViewPages == 555)
+                            {
+                                DataView.ItemsSource = Data;
+                                fullcount = Data.Count();
+
+                                LoadAll();
+                            }
+
+                        }
+                        if (ComboBoxSorting.SelectedIndex == 1)
+                        {
+                            var Data = schoollanguageEntities.GetContext().Client.OrderBy(p => p.LastName).Where(Client => Client.LastName.Contains(SearchText) && Client.Birthday.HasValue && Client.Birthday.Value.Month == DateTime.Now.Month || Client.Phone.Contains(SearchText) || Client.FirstName.Contains(SearchText) && Client.Birthday.HasValue && Client.Birthday.Value.Month == DateTime.Now.Month || Client.Patronymic.Contains(SearchText) && Client.Birthday.HasValue && Client.Birthday.Value.Month == DateTime.Now.Month || Client.Email.Contains(SearchText)).ToList();
+                            if (ViewPages == 10)
+                            {
+                                DataView.ItemsSource = Data.Skip(start * 10).Take(10);
+                                fullcount = Data.Count();
+                                Load10();
+                            }
+                            if (ViewPages == 50)
+                            {
+                                DataView.ItemsSource = Data.Skip(start * 50).Take(50);
+                                fullcount = Data.Count();
+                                Load50();
+                            }
+                            if (ViewPages == 200)
+                            {
+                                DataView.ItemsSource = Data.Skip(start * 200).Take(200);
+                                fullcount = Data.Count();
+                                Load200();
+                            }
+                            if (ViewPages == 555)
+                            {
+                                DataView.ItemsSource = Data;
+                                fullcount = Data.Count();
+                                LoadAll();
+                            }
+                        }
+                        if (ComboBoxSorting.SelectedIndex == 2)
+                        {
+                            var Data = schoollanguageEntities.GetContext().Client.ToList().OrderByDescending(c => c.DataVisitint).Where(Client => Client.LastName.Contains(SearchText) && Client.Birthday.HasValue && Client.Birthday.Value.Month == DateTime.Now.Month || Client.Phone.Contains(SearchText) || Client.FirstName.Contains(SearchText) && Client.Birthday.HasValue && Client.Birthday.Value.Month == DateTime.Now.Month || Client.Patronymic.Contains(SearchText) && Client.Birthday.HasValue && Client.Birthday.Value.Month == DateTime.Now.Month || Client.Email.Contains(SearchText)).ToList();
+                            if (ViewPages == 10)
+                            {
+                                DataView.ItemsSource = Data.Skip(start * 10).Take(10);
+                                fullcount = Data.Count();
+                                Load10();
+                            }
+                            if (ViewPages == 50)
+                            {
+                                DataView.ItemsSource = Data.Skip(start * 50).Take(50);
+                                fullcount = Data.Count();
+                                Load50();
+                            }
+                            if (ViewPages == 200)
+                            {
+                                DataView.ItemsSource = Data.Skip(start * 200).Take(200);
+                                fullcount = Data.Count();
+                                Load200();
+                            }
+                            if (ViewPages == 555)
+                            {
+                                DataView.ItemsSource = Data;
+                                fullcount = Data.Count();
+                                LoadAll();
+                            }
+                        }
+                        if (ComboBoxSorting.SelectedIndex == 3)
+                        {
+                            var Data = schoollanguageEntities.GetContext().Client.ToList().OrderBy(c => c.DataVisitint).Where(Client => Client.LastName.Contains(SearchText) && Client.Birthday.HasValue && Client.Birthday.Value.Month == DateTime.Now.Month || Client.Phone.Contains(SearchText) || Client.FirstName.Contains(SearchText) && Client.Birthday.HasValue && Client.Birthday.Value.Month == DateTime.Now.Month || Client.Patronymic.Contains(SearchText) && Client.Birthday.HasValue && Client.Birthday.Value.Month == DateTime.Now.Month || Client.Email.Contains(SearchText)).ToList();
+                            if (ViewPages == 10)
+                            {
+                                DataView.ItemsSource = Data.Skip(start * 10).Take(10);
+                                fullcount = Data.Count();
+                                Load10();
+                            }
+                            if (ViewPages == 50)
+                            {
+                                DataView.ItemsSource = Data.Skip(start * 50).Take(50);
+                                fullcount = Data.Count();
+                                Load50();
+                            }
+                            if (ViewPages == 200)
+                            {
+                                DataView.ItemsSource = Data.Skip(start * 200).Take(200);
+                                fullcount = Data.Count();
+                                Load200();
+                            }
+                            if (ViewPages == 555)
+                            {
+                                DataView.ItemsSource = Data;
+                                fullcount = Data.Count();
+                                LoadAll();
+                            }
+                        }
+                        if (ComboBoxSorting.SelectedIndex == 4)
+                        {
+                            var Data = schoollanguageEntities.GetContext().Client.ToList().OrderByDescending(c => c.CountVisitint).Where(Client => Client.LastName.Contains(SearchText) || Client.Phone.Contains(SearchText) || Client.FirstName.Contains(SearchText) || Client.Patronymic.Contains(SearchText) || Client.Email.Contains(SearchText)).ToList();
+                            if (ViewPages == 10)
+                            {
+                                DataView.ItemsSource = Data.Skip(start * 10).Take(10);
+                                fullcount = Data.Count();
+                                Load10();
+                            }
+                            if (ViewPages == 50)
+                            {
+                                DataView.ItemsSource = Data.Skip(start * 50).Take(50);
+                                fullcount = Data.Count();
+                                Load50();
+                            }
+                            if (ViewPages == 200)
+                            {
+                                DataView.ItemsSource = Data.Skip(start * 200).Take(200);
+                                fullcount = Data.Count();
+                                Load200();
+                            }
+                            if (ViewPages == 555)
+                            {
+                                DataView.ItemsSource = Data;
+                                fullcount = Data.Count();
+                                LoadAll();
+                            }
+                        }
+                        if (ComboBoxSorting.SelectedIndex == 5)
+                        {
+                            var Data = schoollanguageEntities.GetContext().Client.ToList().OrderBy(c => c.CountVisitint).Where(Client => Client.LastName.Contains(SearchText) || Client.Phone.Contains(SearchText) || Client.FirstName.Contains(SearchText) || Client.Patronymic.Contains(SearchText) || Client.Email.Contains(SearchText)).ToList();
+                            if (ViewPages == 10)
+                            {
+                                DataView.ItemsSource = Data.Skip(start * 10).Take(10);
+                                fullcount = Data.Count();
+                                Load10();
+                            }
+                            if (ViewPages == 50)
+                            {
+                                DataView.ItemsSource = Data.Skip(start * 50).Take(50);
+                                fullcount = Data.Count();
+                                Load50();
+                            }
+                            if (ViewPages == 200)
+                            {
+                                DataView.ItemsSource = Data.Skip(start * 200).Take(200);
+                                fullcount = Data.Count();
+                                Load200();
+                            }
+                            if (ViewPages == 555)
+                            {
+                                DataView.ItemsSource = Data;
+                                fullcount = Data.Count();
+                                LoadAll();
+                            }
+                        }
+                    }
+                    if (ComboBoxSorting.SelectedIndex != 0 && IndexFilter != 0)
+                    {
+                        if (ComboBoxSorting.SelectedIndex == 0)
+                        {
+                            string filter = IndexFilter.ToString();
+                            var Data = schoollanguageEntities.GetContext().Client.OrderBy(Client => Client.ID).Where(Client => Client.LastName.Contains(SearchText) && Client.GenderCode == filter || Client.Phone.Contains(SearchText) && Client.GenderCode == filter || Client.FirstName.Contains(SearchText) && Client.GenderCode == filter || Client.Patronymic.Contains(SearchText) && Client.GenderCode == filter || Client.Email.Contains(SearchText) && Client.GenderCode == filter).ToList();
+                            if (ViewPages == 10)
+                            {
+                                DataView.ItemsSource = Data.Skip(start * 10).Take(10);
+                                fullcount = Data.Count();
+
+                                Load10();
+                            }
+                            if (ViewPages == 50)
+                            {
+                                DataView.ItemsSource = Data.Skip(start * 50).Take(50);
+                                fullcount = Data.Count();
+
+                                Load50();
+                            }
+                            if (ViewPages == 200)
+                            {
+                                DataView.ItemsSource = Data.Skip(start * 200).Take(200);
+                                fullcount = Data.Count();
+
+                                Load200();
+                            }
+                            if (ViewPages == 555)
+                            {
+                                DataView.ItemsSource = Data;
+                                fullcount = Data.Count();
+
+                                LoadAll();
+                            }
+
+                        }
+                        if (ComboBoxSorting.SelectedIndex == 1)
+                        {
+                            string filter = IndexFilter.ToString();
+                            var Data = schoollanguageEntities.GetContext().Client.OrderBy(p => p.LastName).Where(Client => Client.LastName.Contains(SearchText) && Client.GenderCode == filter || Client.Phone.Contains(SearchText) && Client.GenderCode == filter || Client.FirstName.Contains(SearchText) && Client.GenderCode == filter || Client.Patronymic.Contains(SearchText) && Client.GenderCode == filter || Client.Email.Contains(SearchText)).ToList();
+                            if (ViewPages == 10)
+                            {
+                                DataView.ItemsSource = Data.Skip(start * 10).Take(10);
+                                fullcount = Data.Count();
+                                Load10();
+                            }
+                            if (ViewPages == 50)
+                            {
+                                DataView.ItemsSource = Data.Skip(start * 50).Take(50);
+                                fullcount = Data.Count();
+                                Load50();
+                            }
+                            if (ViewPages == 200)
+                            {
+                                DataView.ItemsSource = Data.Skip(start * 200).Take(200);
+                                fullcount = Data.Count();
+                                Load200();
+                            }
+                            if (ViewPages == 555)
+                            {
+                                DataView.ItemsSource = Data;
+                                fullcount = Data.Count();
+                                LoadAll();
+                            }
+                        }
+                        if (ComboBoxSorting.SelectedIndex == 2)
+                        {
+                            string filter = IndexFilter.ToString();
+                            var Data = schoollanguageEntities.GetContext().Client.ToList().OrderByDescending(c => c.DataVisitint).Where(Client => Client.LastName.Contains(SearchText) && Client.GenderCode == filter || Client.Phone.Contains(SearchText) || Client.FirstName.Contains(SearchText) && Client.GenderCode == filter || Client.Patronymic.Contains(SearchText) && Client.GenderCode == filter || Client.Email.Contains(SearchText)).ToList();
+                            if (ViewPages == 10)
+                            {
+                                DataView.ItemsSource = Data.Skip(start * 10).Take(10);
+                                fullcount = Data.Count();
+                                Load10();
+                            }
+                            if (ViewPages == 50)
+                            {
+                                DataView.ItemsSource = Data.Skip(start * 50).Take(50);
+                                fullcount = Data.Count();
+                                Load50();
+                            }
+                            if (ViewPages == 200)
+                            {
+                                DataView.ItemsSource = Data.Skip(start * 200).Take(200);
+                                fullcount = Data.Count();
+                                Load200();
+                            }
+                            if (ViewPages == 555)
+                            {
+                                DataView.ItemsSource = Data;
+                                fullcount = Data.Count();
+                                LoadAll();
+                            }
+                        }
+                        if (ComboBoxSorting.SelectedIndex == 3)
+                        {
+                            string filter = IndexFilter.ToString();
+                            var Data = schoollanguageEntities.GetContext().Client.ToList().OrderBy(c => c.DataVisitint).Where(Client => Client.LastName.Contains(SearchText) && Client.GenderCode == filter || Client.Phone.Contains(SearchText) && Client.GenderCode == filter || Client.FirstName.Contains(SearchText) && Client.GenderCode == filter || Client.Patronymic.Contains(SearchText) && Client.GenderCode == filter || Client.Email.Contains(SearchText)).ToList();
+                            if (ViewPages == 10)
+                            {
+                                DataView.ItemsSource = Data.Skip(start * 10).Take(10);
+                                fullcount = Data.Count();
+                                Load10();
+                            }
+                            if (ViewPages == 50)
+                            {
+                                DataView.ItemsSource = Data.Skip(start * 50).Take(50);
+                                fullcount = Data.Count();
+                                Load50();
+                            }
+                            if (ViewPages == 200)
+                            {
+                                DataView.ItemsSource = Data.Skip(start * 200).Take(200);
+                                fullcount = Data.Count();
+                                Load200();
+                            }
+                            if (ViewPages == 555)
+                            {
+                                DataView.ItemsSource = Data;
+                                fullcount = Data.Count();
+                                LoadAll();
+                            }
+                        }
+                        if (ComboBoxSorting.SelectedIndex == 4)
+                        {
+                            string filter = IndexFilter.ToString();
+                            var Data = schoollanguageEntities.GetContext().Client.ToList().OrderByDescending(c => c.CountVisitint).Where(Client => Client.LastName.Contains(SearchText) && Client.GenderCode == filter || Client.Phone.Contains(SearchText) && Client.GenderCode == filter || Client.FirstName.Contains(SearchText) && Client.GenderCode == filter || Client.Patronymic.Contains(SearchText) && Client.GenderCode == filter || Client.Email.Contains(SearchText)).ToList();
+                            if (ViewPages == 10)
+                            {
+                                DataView.ItemsSource = Data.Skip(start * 10).Take(10);
+                                fullcount = Data.Count();
+                                Load10();
+                            }
+                            if (ViewPages == 50)
+                            {
+                                DataView.ItemsSource = Data.Skip(start * 50).Take(50);
+                                fullcount = Data.Count();
+                                Load50();
+                            }
+                            if (ViewPages == 200)
+                            {
+                                DataView.ItemsSource = Data.Skip(start * 200).Take(200);
+                                fullcount = Data.Count();
+                                Load200();
+                            }
+                            if (ViewPages == 555)
+                            {
+                                DataView.ItemsSource = Data;
+                                fullcount = Data.Count();
+                                LoadAll();
+                            }
+                        }
+                        if (ComboBoxSorting.SelectedIndex == 5)
+                        {
+                            string filter = IndexFilter.ToString();
+                            var Data = schoollanguageEntities.GetContext().Client.ToList().OrderBy(c => c.CountVisitint).Where(Client => Client.LastName.Contains(SearchText) && Client.GenderCode == filter || Client.Phone.Contains(SearchText) || Client.FirstName.Contains(SearchText) && Client.GenderCode == filter || Client.Patronymic.Contains(SearchText) && Client.GenderCode == filter || Client.Email.Contains(SearchText)).ToList();
+                            if (ViewPages == 10)
+                            {
+                                DataView.ItemsSource = Data.Skip(start * 10).Take(10);
+                                fullcount = Data.Count();
+                                Load10();
+                            }
+                            if (ViewPages == 50)
+                            {
+                                DataView.ItemsSource = Data.Skip(start * 50).Take(50);
+                                fullcount = Data.Count();
+                                Load50();
+                            }
+                            if (ViewPages == 200)
+                            {
+                                DataView.ItemsSource = Data.Skip(start * 200).Take(200);
+                                fullcount = Data.Count();
+                                Load200();
+                            }
+                            if (ViewPages == 555)
+                            {
+                                DataView.ItemsSource = Data;
+                                fullcount = Data.Count();
+                                LoadAll();
+                            }
+                        }
+                    }
 
 
+                }
             }
         }
 
